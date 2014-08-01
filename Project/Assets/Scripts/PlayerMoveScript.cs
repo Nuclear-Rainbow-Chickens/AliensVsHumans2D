@@ -14,4 +14,5 @@ public class PlayerMoveScript : MonoBehaviour {
 		transform.eulerAngles = new Vector3(0,0,rot.eulerAngles.z);
 		rigidbody2D.AddForce(transform.up * speed * Input.GetAxis("Vertical"));
 	}
+
 }
