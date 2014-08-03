@@ -11,10 +11,7 @@ public class AISetF : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void OnDrawGizmos () {
-		Gizmos.color = Color.red;
-		Gizmos.DrawSphere (transform.position, 0.9f);
-	}
+
 	public void  BeginAI() {
 		GetComponent<AI>().enabled = true;
 	}

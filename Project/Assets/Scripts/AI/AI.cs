@@ -6,7 +6,7 @@ public class AI : MonoBehaviour {
 	public GameObject Waypoint_Control;
 	public bool DrawGizmos = false;
 	public bool IFound = false;
-	public const float RAY_DISTANCE = 1f;
+	public const float RAY_DISTANCE = 0.9f;
 	Vector2 Up = new Vector2(0, RAY_DISTANCE * 2);
 	Vector2 Down = new Vector2(0,-RAY_DISTANCE * 2);
 	Vector2 Left = new Vector2(-RAY_DISTANCE * 2, 0);
@@ -27,7 +27,7 @@ public class AI : MonoBehaviour {
 		RaycastHit2D hitup = Physics2D.Raycast (transform.position, Up, RAY_DISTANCE);
 		try {
 			string test = hitup.collider.gameObject.tag;
-			if(test == "Player" && Vector2.Distance(hitup.point, transform.position) < 0.6) {
+			if(test == "Player" && Vector2.Distance(hitup.point, transform.position) < RAY_DISTANCE ) {
 				Waypoint_Control.GetComponent<FoundControl>().Directions.Clear();
 				Report();
 			}
@@ -38,7 +38,7 @@ public class AI : MonoBehaviour {
 		RaycastHit2D hitdown = Physics2D.Raycast (transform.position, Down, RAY_DISTANCE);
 		try {
 			string test = hitdown.collider.gameObject.tag;
-			if(test == "Player" && Vector2.Distance(hitup.point, transform.position) < 0.6) {
+			if(test == "Player" && Vector2.Distance(hitup.point, transform.position) < RAY_DISTANCE ) {
 				Waypoint_Control.GetComponent<FoundControl>().Directions.Clear();
 				Report();
 			}
@@ -49,7 +49,7 @@ public class AI : MonoBehaviour {
 		RaycastHit2D hitleft = Physics2D.Raycast (transform.position, Left, RAY_DISTANCE);
 		try {
 			string test = hitleft.collider.gameObject.tag;
-			if(test == "Player" && Vector2.Distance(hitup.point, transform.position) < 0.6) {
+			if(test == "Player" && Vector2.Distance(hitup.point, transform.position) < RAY_DISTANCE ) {
 				Waypoint_Control.GetComponent<FoundControl>().Directions.Clear();
 				Report();
 			}
@@ -60,7 +60,7 @@ public class AI : MonoBehaviour {
 		RaycastHit2D hitright = Physics2D.Raycast (transform.position, Right, RAY_DISTANCE);
 		try {
 			string test = hitright.collider.gameObject.tag;
-			if(test == "Player" && Vector2.Distance(hitup.point, transform.position) < 0.6) {
+			if(test == "Player" && Vector2.Distance(hitup.point, transform.position) < RAY_DISTANCE ) {
 				Waypoint_Control.GetComponent<FoundControl>().Directions.Clear();
 				Report();
 			}
